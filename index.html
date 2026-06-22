@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Therapeutic Physical Intervention Training | London Safeguarding Network</title>
+<meta name="description" content="Trauma-informed Therapeutic Physical Intervention training built on Positive Behaviour Support and de-escalation. Least-force, lawful and certificated, for children's and adult services across the UK. Free Restraint Log App included.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f2747; --navy:#13315c; --forest:#1d4fa6; --forest-d:#173f86; --pine:#3a6fc4;
+    --sand:#e9f2fd; --sand-2:#d8e8fb; --paper:#f4f9ff; --card:#ffffff; --line:#d9e6f6;
+    --brass:#2f7bed; --brass-d:#1f5fcf; --sage:#bdd9f7; --sage-d:#9cc4ee; --sky:#eaf3fe;
+    --text:#1b2d47; --muted:#56697f; --muted-2:#89a0bc;
+    --disp:"Fraunces",Georgia,"Times New Roman",serif;
+    --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#eef5fd;color:var(--text);font-family:var(--body);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--disp);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin:0;color:var(--ink)}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--brass-d)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;border-radius:999px;padding:13px 24px;cursor:pointer;border:1.5px solid transparent;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;white-space:nowrap}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-forest{background:var(--forest);color:#fff;box-shadow:0 12px 26px -10px rgba(29,79,166,.55)}
+  .btn-forest:hover{background:var(--forest-d)}
+  .btn-brass{background:var(--brass);color:#fff;box-shadow:0 12px 26px -10px rgba(47,123,237,.5)}
+  .btn-brass:hover{background:var(--brass-d)}
+  .btn-out{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-out:hover{border-color:var(--brass)}
+  .btn-out-l{background:rgba(255,255,255,.1);color:#eaf2fd;border-color:rgba(234,242,253,.36)}
+  .btn-out-l:hover{border-color:#fff}
+  .btn-sm{padding:9px 16px;font-size:14px}
+
+  .nav{position:sticky;top:0;z-index:70;background:rgba(238,245,253,.92);backdrop-filter:blur(12px) saturate(140%);border-bottom:1px solid var(--line)}
+  .nav .row{display:flex;align-items:center;gap:18px;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+  .brand .mk{width:38px;height:38px;border-radius:10px;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:18px;flex:none}
+  .brand b{font-family:var(--disp);font-weight:600;font-size:17px;color:var(--ink);line-height:1}
+  .brand span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted-2);margin-top:3px}
+  .navlinks{display:none;gap:22px;align-items:center}
+  .navlinks a{font-size:14px;color:var(--muted);font-weight:500}
+  .navlinks a:hover{color:var(--brass-d)}
+  .nav .navcta{display:flex;align-items:center;gap:10px}
+  .nav .phone{display:none;font-family:var(--disp);font-weight:600;font-size:16px;color:var(--forest)}
+
+  .hero{position:relative;overflow:hidden;background:
+     radial-gradient(72% 82% at 88% 0%,rgba(189,217,247,.6),transparent 60%),
+     linear-gradient(180deg,var(--sand) 0%,#ffffff 100%)}
+  .hero-in{display:grid;grid-template-columns:1fr;gap:38px;align-items:center;padding:54px 0 64px}
+  .hero h1{font-size:clamp(38px,6vw,68px);font-weight:600;letter-spacing:-.025em;margin-top:18px}
+  .hero h1 em{font-style:italic;color:var(--forest)}
+  .hero .lede{margin-top:22px;font-size:clamp(16px,1.7vw,19px);color:var(--muted);max-width:54ch}
+  .hero .cta{margin-top:30px;display:flex;gap:13px;flex-wrap:wrap}
+  .trust{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+  .trust span{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--text)}
+  .trust span .d{width:7px;height:7px;border-radius:50%;background:var(--brass)}
+  .herofig{position:relative}
+  .herofig img{width:100%;height:100%;object-fit:cover;border-radius:22px;border:1px solid var(--line);box-shadow:0 40px 70px -40px rgba(15,39,71,.55);aspect-ratio:4/3;background:var(--sage)}
+  .herofig .tagcard{position:absolute;left:-6px;bottom:-18px;background:var(--forest);color:#fff;border-radius:16px;padding:15px 18px;box-shadow:0 22px 40px -20px rgba(15,39,71,.6);max-width:230px}
+  .herofig .tagcard b{font-family:var(--disp);font-weight:600;font-size:15px;display:block}
+  .herofig .tagcard span{font-size:12px;color:var(--sage)}
+  .herofig .brasscorner{position:absolute;top:-10px;right:-10px;width:64px;height:64px;border-top:3px solid var(--brass);border-right:3px solid var(--brass);border-top-right-radius:18px}
+
+  .ladder{background:linear-gradient(135deg,var(--forest) 0%,var(--navy) 100%);color:#eaf2fd;padding:46px 0}
+  .ladder h2{color:#fff;font-size:clamp(22px,3vw,30px);max-width:24ch}
+  .ladder .sub{color:var(--sage);margin-top:12px;max-width:60ch;font-size:15px}
+  .steps{display:grid;grid-template-columns:1fr;gap:10px;margin-top:30px}
+  .step{position:relative;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:18px 18px 18px 20px;display:flex;flex-direction:column;gap:5px}
+  .step .k{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--sage)}
+  .step .t{font-family:var(--disp);font-weight:600;font-size:17px;color:#fff}
+  .step .d{font-size:12.5px;color:#c8dcf4}
+  .step.last{background:#dcebfc;background:linear-gradient(160deg,#e6f1ff,#cfe3fb);border-color:#cfe3fb}
+  .step.last .k{color:var(--brass-d)}.step.last .t{color:var(--ink)}.step.last .d{color:var(--navy)}
+
+  section{padding:74px 0}
+  .sec-eye{display:flex;align-items:center;gap:12px}
+  .sec-eye:before{content:"";width:30px;height:1.5px;background:var(--brass)}
+  .sec-head h2{font-size:clamp(27px,3.6vw,40px);margin:14px 0 0;max-width:20ch}
+  .sec-head p.sub{margin-top:16px;color:var(--muted);max-width:62ch;font-size:16px}
+
+  .approach{background:var(--paper)}
+  .agrid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:38px}
+  .acard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .15s,box-shadow .15s}
+  .acard:hover{transform:translateY(-3px);box-shadow:0 26px 44px -28px rgba(15,39,71,.35)}
+  .acard .ic{width:46px;height:46px;border-radius:13px;background:var(--sage);display:flex;align-items:center;justify-content:center;font-size:22px}
+  .acard h3{font-size:19px;margin-top:18px}
+  .acard p{font-size:14.5px;color:var(--muted);margin-top:9px}
+
+  .learn{background:var(--sand)}
+  .lgrid{display:grid;grid-template-columns:1fr;gap:0;margin-top:36px;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .litem{display:flex;gap:16px;padding:20px 24px;border-bottom:1px solid var(--line)}
+  .litem:last-child{border-bottom:0}
+  .litem .num{font-family:var(--mono);font-size:12px;color:var(--brass-d);font-weight:600;padding-top:3px;flex:none;width:26px}
+  .litem h4{font-size:16.5px}
+  .litem p{font-size:14px;color:var(--muted);margin-top:4px}
+
+  .who{background:var(--paper)}
+  .whochips{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .whochips .wc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;flex:1 1 200px;min-width:200px}
+  .whochips .wc b{font-family:var(--disp);font-weight:600;font-size:16px;display:block}
+  .whochips .wc span{font-size:13px;color:var(--muted)}
+
+  .format{background:linear-gradient(135deg,var(--navy) 0%,var(--ink) 100%);color:#eaf2fd}
+  .fgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:34px}
+  .fcell{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:24px}
+  .fcell .n{font-family:var(--disp);font-weight:600;font-size:clamp(26px,3.4vw,38px);color:#fff;line-height:1}
+  .fcell .l{font-size:13px;color:var(--sage);margin-top:9px}
+
+  .gallery{background:var(--sand)}
+  .ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:36px}
+  .ggrid a{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);aspect-ratio:1/1;background:var(--sand-2)}
+  .ggrid img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+  .ggrid a:hover img{transform:scale(1.06)}
+  .galmore{margin-top:24px}
+
+  .app{background:var(--paper)}
+  .appwrap{display:grid;grid-template-columns:1fr;gap:30px;margin-top:36px;align-items:center;background:linear-gradient(135deg,var(--ink),var(--forest));border-radius:24px;padding:34px;color:#eaf2fd}
+  .appwrap h3{color:#fff;font-size:clamp(22px,3vw,30px)}
+  .appwrap .free{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#bfe0ff;background:rgba(47,123,237,.28);border:1px solid rgba(189,217,247,.45);border-radius:999px;padding:5px 12px;margin-bottom:14px}
+  .appwrap p{color:var(--sage);margin-top:12px;font-size:15px}
+  .applist{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+  .applist li{display:flex;gap:11px;font-size:14.5px;color:#d6e6fb}
+  .applist li .tk{color:#7fb6ff;font-weight:700;flex:none}
+  .appcta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+  .appcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:22px}
+  .appcard .scr{background:#0e2038;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px}
+  .appcard .scr .ln{height:9px;border-radius:5px;background:rgba(189,217,247,.24);margin-bottom:9px}
+  .appcard .scr .ln.s{width:55%}.appcard .scr .ln.m{width:80%}.appcard .scr .ln.brass{background:rgba(47,123,237,.7);width:42%}
+  .appcard .scrt{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
+
+  .pricing{background:var(--sand)}
+  .pricecard{margin-top:36px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px;display:grid;grid-template-columns:1fr;gap:28px}
+  .priceleft .big{font-family:var(--disp);font-weight:600;font-size:clamp(40px,6vw,60px);color:var(--ink);line-height:1}
+  .priceleft .big span{font-size:18px;color:var(--muted);font-family:var(--body);font-weight:500}
+  .priceleft p{color:var(--muted);margin-top:12px;font-size:14.5px;max-width:40ch}
+  .pricenote{margin-top:16px;font-size:12.5px;color:var(--muted-2)}
+  .calc{background:var(--sky);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .calc .fld{margin-bottom:16px}
+  .calc label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted-2);margin-bottom:8px}
+  .calc input[type=number]{width:100%;font-family:var(--body);font-size:16px;border:1px solid var(--line);border-radius:10px;padding:11px 13px;background:#fff;color:var(--ink)}
+  .seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px}
+  .seg button{font-family:var(--body);font-weight:600;font-size:14px;border:0;background:none;cursor:pointer;padding:8px 18px;border-radius:999px;color:var(--muted)}
+  .seg button.on{background:var(--forest);color:#fff}
+  .calcout{margin-top:6px;display:flex;align-items:baseline;justify-content:space-between;gap:14px;border-top:1px dashed var(--line);padding-top:16px}
+  .calcout .rate b{font-family:var(--disp);font-weight:600;font-size:26px;color:var(--forest)}
+  .calcout .rate span{font-size:12px;color:var(--muted-2);display:block}
+  .calcout .tot{text-align:right}
+  .calcout .tot b{font-family:var(--disp);font-weight:600;font-size:26px;color:var(--ink)}
+  .calcout .tot span{font-size:12px;color:var(--muted-2);display:block}
+  .calcsave{margin-top:10px;font-size:13px;color:var(--brass-d);font-weight:600;min-height:18px}
+
+  .reviews{background:var(--paper)}
+  .rgrid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
+  .rcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column}
+  .stars{color:var(--brass);font-size:15px;letter-spacing:2px}
+  .rcard p{font-family:var(--disp);font-style:italic;font-weight:400;font-size:17px;color:var(--ink);margin-top:14px;line-height:1.45}
+  .rcard .by{margin-top:auto;padding-top:18px;display:flex;align-items:center;gap:12px}
+  .rcard .av{width:42px;height:42px;border-radius:50%;background:var(--sage);color:var(--forest-d);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:600;font-size:15px;flex:none}
+  .rcard .by b{font-size:14px;display:block;color:var(--ink)}
+  .rcard .by span{font-size:12.5px;color:var(--muted)}
+  .reviews .note{margin-top:22px;font-size:12.5px;color:var(--muted-2)}
+
+  .faq{background:var(--sand)}
+  .faqlist{margin-top:34px;border-top:1px solid var(--line)}
+  details{border-bottom:1px solid var(--line)}
+  summary{list-style:none;cursor:pointer;padding:20px 4px;font-family:var(--disp);font-weight:600;font-size:18px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary .pl{color:var(--brass);font-size:22px;font-weight:400;transition:transform .2s;flex:none}
+  details[open] summary .pl{transform:rotate(45deg)}
+  details .ans{padding:0 4px 22px;color:var(--muted);font-size:15px;max-width:70ch}
+
+  .final{background:linear-gradient(135deg,var(--forest) 0%,var(--ink) 100%);color:#eaf2fd;text-align:center}
+  .final h2{color:#fff;font-size:clamp(30px,4.4vw,46px);max-width:18ch;margin:16px auto 0}
+  .final p{color:var(--sage);margin:18px auto 0;max-width:50ch}
+  .final .cta{margin-top:30px;display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+  .final .ph{margin-top:26px;font-family:var(--disp);font-weight:600;font-size:clamp(20px,3vw,26px);color:#fff}
+  .final .ph a{color:#8fbcff}
+
+  footer{background:var(--ink);color:var(--sage);padding:46px 0 30px}
+  footer .ftop{display:grid;grid-template-columns:1fr;gap:24px}
+  footer h4{color:#fff;font-size:15px;font-family:var(--disp);font-weight:600;margin-bottom:12px}
+  footer a{color:var(--sage);font-size:14px;display:block;margin-bottom:7px}
+  footer a:hover{color:#8fbcff}
+  footer .disc{border-top:1px solid rgba(255,255,255,.14);margin-top:30px;padding-top:20px;font-size:11.5px;color:#7e93af;line-height:1.7;max-width:90ch}
+
+  :focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:6px}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (min-width:760px){
+    .navlinks{display:flex}.nav .phone{display:block}
+    .hero-in{grid-template-columns:1.05fr .95fr;padding:70px 0 80px}
+    .steps{grid-template-columns:repeat(5,1fr)}
+    .agrid{grid-template-columns:repeat(3,1fr)}
+    .lgrid{grid-template-columns:1fr 1fr}
+    .litem:nth-last-child(2){border-bottom:0}
+    .fgrid{grid-template-columns:repeat(4,1fr)}
+    .ggrid{grid-template-columns:repeat(4,1fr)}
+    .appwrap{grid-template-columns:1.25fr .75fr}
+    .pricecard{grid-template-columns:1fr 1fr;align-items:center}
+    .rgrid{grid-template-columns:repeat(3,1fr)}
+    .final h2{font-size:clamp(34px,4.4vw,48px)}
+    footer .ftop{grid-template-columns:2fr 1fr 1fr}
+  }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn:hover{transform:none}.ggrid a:hover img{transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap row">
+  <a class="brand" href="#top"><span class="mk">LSN</span><span><b>London Safeguarding Network</b><span>Therapeutic Physical Intervention</span></span></a>
+  <div class="navlinks">
+    <a href="#approach">Approach</a>
+    <a href="#learn">What you learn</a>
+    <a href="#app">Free app</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#reviews">Reviews</a>
+  </div>
+  <div class="navcta">
+    <a class="phone" href="tel:02046180163">020 4618 0163</a>
+    <a class="btn btn-forest btn-sm" href="#contact">Book a call</a>
+  </div>
+</div></nav>
+
+<main id="top">
+  <header class="hero"><div class="wrap hero-in">
+    <div>
+      <span class="eyebrow">Therapeutic Physical Intervention Training</span>
+      <h1>Keep everyone safe &mdash; with the <em>least force possible.</em></h1>
+      <p class="lede">Practical, trauma-informed training built on Positive Behaviour Support and de-escalation, so your team prevents crises rather than just managing them. One focused course, delivered on-site, for children's and adult services across the UK.</p>
+      <div class="cta">
+        <a class="btn btn-forest" href="#contact">Book a call</a>
+        <a class="btn btn-out" href="#pricing">See pricing &rarr;</a>
+      </div>
+      <div class="trust">
+        <span><i class="d"></i>Adults' &amp; children's services</span>
+        <span><i class="d"></i>PBS-led &amp; de-escalation first</span>
+        <span><i class="d"></i>Certificate on completion</span>
+      </div>
+    </div>
+    <div class="herofig reveal">
+      <span class="brasscorner"></span>
+      <img src="https://therapeutic-restraint.londonsafeguardingnetwork.com/images/training-hero.jpg" alt="Therapeutic physical intervention training in practice — a practitioner using a calm, supportive guided hold." loading="eager">
+      <div class="tagcard"><b>Least-force, every time</b><span>Restraint as the last step, never the first.</span></div>
+    </div>
+  </div></header>
+
+  <section class="ladder" style="padding:0"><div class="wrap" style="padding:52px 0">
+    <h2>Physical intervention is the last step &mdash; not the first.</h2>
+    <p class="sub">Every part of the course is built to move your team left along this line, so a safe hold is only ever a rare, well-judged last resort.</p>
+    <div class="steps">
+      <div class="step"><span class="k">01</span><span class="t">Prevent</span><span class="d">PBS strategies that stop crises forming.</span></div>
+      <div class="step"><span class="k">02</span><span class="t">Notice</span><span class="d">Read triggers and early warning signs.</span></div>
+      <div class="step"><span class="k">03</span><span class="t">De-escalate</span><span class="d">Calm the situation through communication.</span></div>
+      <div class="step"><span class="k">04</span><span class="t">Support</span><span class="d">Guide and reassure, keeping dignity intact.</span></div>
+      <div class="step last"><span class="k">05 &middot; last resort</span><span class="t">Safe intervention</span><span class="d">Least-restrictive, lawful, risk-aware.</span></div>
+    </div>
+  </div></section>
+
+  <section id="approach" class="approach"><div class="wrap">
+    <div class="sec-head reveal"><span class="sec-eye"><span class="eyebrow">The approach</span></span><h2>A therapeutic model, not traditional restraint training.</h2><p class="sub">Every element is designed to reduce restrictive intervention &mdash; and the harm it can cause &mdash; by getting ahead of crisis.</p></div>
+    <div class="agrid">
+      <div class="acard reveal"><div class="ic">&#129309;</div><h3>Therapeutic &amp; person-centred</h3><p>Protecting dignity, relationships and emotional safety &mdash; for the people you support and your staff.</p></div>
+      <div class="acard reveal"><div class="ic">&#127793;</div><h3>Positive Behaviour Support</h3><p>Proactive, PBS-led strategies that reduce challenging behaviour and the need for any restrictive intervention.</p></div>
+      <div class="acard reveal"><div class="ic">&#128483;</div><h3>De-escalation first</h3><p>Reading triggers and early warning signs, and resolving situations long before restraint is ever considered.</p></div>
+      <div class="acard reveal"><div class="ic">&#9878;</div><h3>Lawful &amp; accountable</h3><p>Reasonable force, human rights, duty of care and professional accountability &mdash; confidently understood.</p></div>
+      <div class="acard reveal"><div class="ic">&#10084;</div><h3>Risk-aware practice</h3><p>The real risks of physical intervention, including positional asphyxia, and how to avoid causing harm.</p></div>
+      <div class="acard reveal"><div class="ic">&#128260;</div><h3>Reflection &amp; learning</h3><p>Trauma-informed, post-incident reflection and best practice that keeps your service improving.</p></div>
+    </div>
+  </div></section>
+
+  <section id="learn" class="learn"><div class="wrap">
+    <div class="sec-head reveal"><span class="sec-eye"><span class="eyebrow">What you'll learn</span></span><h2>One course, covering the whole picture.</h2><p class="sub">Two practical days that take your team from prevention through to safe, lawful, last-resort intervention &mdash; and recording it properly afterwards.</p></div>
+    <div class="lgrid reveal">
+      <div class="litem"><span class="num">01</span><div><h4>Understanding behaviour</h4><p>Trauma, triggers and the function of behaviour &mdash; why people reach crisis.</p></div></div>
+      <div class="litem"><span class="num">02</span><div><h4>Positive Behaviour Support</h4><p>Proactive, preventative strategies that reduce the need for any intervention.</p></div></div>
+      <div class="litem"><span class="num">03</span><div><h4>Recognising escalation</h4><p>Early warning signs, dynamic risk assessment and reading the room.</p></div></div>
+      <div class="litem"><span class="num">04</span><div><h4>De-escalation under pressure</h4><p>Communication and calming techniques that resolve situations safely.</p></div></div>
+      <div class="litem"><span class="num">05</span><div><h4>The law &amp; accountability</h4><p>Reasonable force, human rights, duty of care and professional responsibility.</p></div></div>
+      <div class="litem"><span class="num">06</span><div><h4>Risk of physical intervention</h4><p>Positional asphyxia and safer practice &mdash; how to avoid causing harm.</p></div></div>
+      <div class="litem"><span class="num">07</span><div><h4>Safe guides, escorts &amp; holds</h4><p>Hands-on, least-restrictive techniques practised in a calm, supportive way.</p></div></div>
+      <div class="litem"><span class="num">08</span><div><h4>Breakaway &amp; disengagement</h4><p>Safe ways to release and step back, protecting everyone involved.</p></div></div>
+      <div class="litem"><span class="num">09</span><div><h4>Post-incident reflection</h4><p>Trauma-informed debrief, learning and best practice after an event.</p></div></div>
+      <div class="litem"><span class="num">10</span><div><h4>Recording with the Restraint Log App</h4><p>Clear, professional, Ofsted &amp; CQC-ready incident recording &mdash; included free.</p></div></div>
+    </div>
+  </div></section>
+
+  <section id="who" class="who"><div class="wrap">
+    <div class="sec-head reveal"><span class="sec-eye"><span class="eyebrow">Who it's for</span></span><h2>Built for services where calm, safe practice matters most.</h2></div>
+    <div class="whochips reveal">
+      <div class="wc"><b>Children's residential homes</b><span>Therapeutic and complex-needs settings.</span></div>
+      <div class="wc"><b>Supported accommodation</b><span>Semi-independent and 16+ provision.</span></div>
+      <div class="wc"><b>Adult social care</b><span>Complex needs and learning disability services.</span></div>
+      <div class="wc"><b>Education &amp; SEN settings</b><span>Schools and specialist provision.</span></div>
+      <div class="wc"><b>New &amp; agency teams</b><span>Getting staff confident, safe and consistent.</span></div>
+    </div>
+  </div></section>
+
+  <section class="format" style="padding:0"><div class="wrap" style="padding:64px 0">
+    <div class="sec-head reveal"><span class="sec-eye"><span class="eyebrow" style="color:var(--brass)">The format</span></span><h2 style="color:#fff">Training that fits around your service.</h2><p class="sub" style="color:var(--sage)">Delivered on-site, on dates that work around your rota &mdash; hands-on, practical and certificated.</p></div>
+    <div class="fgrid reveal">
+      <div class="fcell"><div class="n">2</div><div class="l">Full days of practical training</div></div>
+      <div class="fcell"><div class="n">On-site</div><div class="l">Delivered for your team, at your service</div></div>
+      <div class="fcell"><div class="n">Flexible</div><div class="l">Dates arranged around your rota</div></div>
+      <div class="fcell"><div class="n">&#10003;</div><div class="l">Certificate on completion</div></div>
+    </div>
+  </div></section>
+
+  <section id="gallery" class="gallery"><div class="wrap">
+    <div class="sec-head reveal"><span class="sec-eye"><span class="eyebrow">In the room</span></span><h2>Training in action.</h2><p class="sub">Controlled, supportive techniques taught hands-on &mdash; every method built around least-force, trauma-informed principles.</p></div>
+    <div class="ggrid reveal">
+      <a href="https://therapeutic-restraint.londonsafeguardingnetwork.com/gallery" target="_blank" rel="noopener"><img src="https://therapeutic-restraint.londonsafeguardingnetwork.com/images/training-07.jpg" alt="Maintaining a safe, supportive distance as part of de-escalation practice." loading="lazy"></a>
+      <a href="https://therapeutic-restraint.londonsafeguardingnetwork.com/gallery" target="_blank" rel="noopener"><img src="https://therapeutic-restraint.londonsafeguardingnetwork.com/images/training-08.jpg" alt="Supportive hand-on-shoulder guide demonstrated calmly during training." loading="lazy"></a>
+      <a href="https://therapeutic-restraint.londonsafeguardingnetwork.com/gallery" target="_blank" rel="noopener"><img src="https://therapeutic-restraint.londonsafeguardingnetwork.com/images/training-16.jpg" alt="Calm, supported wrist guide demonstrated during physical intervention training." loading="lazy"></a>
+      <a href="https://therapeutic-restraint.londonsafeguardingnetwork.com/gallery" target="_blank" rel="noopener"><img src="https://therapeutic-restraint.londonsafeguardingnetwork.com/images/training-17.jpg" alt="Controlled wrist hold practised in a calm, supportive way." loading="lazy"></a>
+      <a href="https://therapeutic-restraint.londonsafeguardingnetwork.com/gallery" target="_blank" rel="noopener"><img src="https://therapeutic-restraint.londonsafeguardingnetwork.com/images/training-13.jpg" alt="Guided escort technique demonstrated with controlled, supportive contact." loading="lazy"></a>
+      <a href="https://therapeutic-restraint.londonsafeguardingnetwork.com/gallery" target="_blank" rel="noopener"><img src="https://therapeutic-restraint.londonsafeguardingnetwork.com/images/training-09.jpg" alt="Safe forearm guiding technique demonstrated in a training session." loading="lazy"></a>
+      <a href="https://therapeutic-restraint.londonsafeguardingnetwork.com/gallery" target="_blank" rel="noopener"><img src="https://therapeutic-restraint.londonsafeguardingnetwork.com/images/training-10.jpg" alt="Practising a safe breakaway and disengagement technique." loading="lazy"></a>
+      <a href="https://therapeutic-restraint.londonsafeguardingnetwork.com/gallery" target="_blank" rel="noopener"><img src="https://therapeutic-restraint.londonsafeguardingnetwork.com/images/training-01.jpg" alt="Supportive guided escort from behind, demonstrated calmly." loading="lazy"></a>
+    </div>
+    <div class="galmore"><a class="btn btn-out" href="https://therapeutic-restraint.londonsafeguardingnetwork.com/gallery" target="_blank" rel="noopener">View full gallery &rarr;</a></div>
+  </div></section>
+
+  <section id="app" class="app"><div class="wrap">
+    <div class="sec-head reveal"><span class="sec-eye"><span class="eyebrow">Included free</span></span><h2>The Restraint Log App &mdash; free with the course.</h2><p class="sub">Every learner who completes the training gets full access at no extra cost. A simple, professional way to record physical interventions clearly and safely.</p></div>
+    <div class="appwrap reveal">
+      <div>
+        <span class="free">Free for everyone we train</span>
+        <h3>Record interventions clearly, safely &amp; professionally.</h3>
+        <p>Built to support Ofsted &amp; CQC-ready incident reporting &mdash; without adding paperwork.</p>
+        <ul class="applist">
+          <li><span class="tk">&#10003;</span>Structured incident log covering de-escalation, dynamic risk, technique and safety checks</li>
+          <li><span class="tk">&#10003;</span>Generates a clean incident-report summary to copy, email or download as a PDF</li>
+          <li><span class="tk">&#10003;</span>Manager dashboard for oversight, supervision and shared learning</li>
+          <li><span class="tk">&#10003;</span>Private by design &mdash; entries stay on your device, nothing is sent to a server</li>
+        </ul>
+        <div class="appcta">
+          <a class="btn btn-brass" href="https://therapeutic-restraint.londonsafeguardingnetwork.com/restraint-log" target="_blank" rel="noopener">Open the Restraint Log App &rarr;</a>
+          <a class="btn btn-out-l" href="#contact">Book the course to claim it</a>
+        </div>
+      </div>
+      <div class="appcard">
+        <div class="scrt">Restraint Log &mdash; incident summary</div>
+        <div class="scr">
+          <div class="ln m"></div><div class="ln s"></div><div class="ln"></div><div class="ln m"></div>
+          <div class="ln brass"></div><div class="ln s"></div><div class="ln" style="margin-bottom:0"></div>
+        </div>
+      </div>
+    </div>
+    <p class="pricenote" style="margin-top:16px">A free resource for learners completing the course. It supports your recording &mdash; it doesn't replace your incident reports, safeguarding procedures, statutory notifications or professional judgement.</p>
+  </div></section>
+
+  <section id="pricing" class="pricing"><div class="wrap">
+    <div class="sec-head reveal"><span class="sec-eye"><span class="eyebrow">Pricing</span></span><h2>See your price in seconds.</h2><p class="sub">One clear day rate, with better rates the more of your team you train. Final quotes confirmed on enquiry.</p></div>
+    <div class="pricecard reveal">
+      <div class="priceleft">
+        <div class="big">&pound;250<span> per person, per day</span></div>
+        <p>Therapeutic Physical Intervention Training, delivered on-site over two practical days. Group discounts applied automatically as your numbers grow.</p>
+        <div class="pricenote">Indicative pricing for guidance. Final quotes confirmed on enquiry &mdash; package discounts available for larger teams.</div>
+      </div>
+      <div class="calc">
+        <div class="fld"><label for="ppl">How many people?</label><input id="ppl" type="number" min="1" max="60" value="8"></div>
+        <div class="fld"><label>How many days?</label><div class="seg" id="daySeg"><button data-d="1">1 day</button><button data-d="2" class="on">2 days</button></div></div>
+        <div class="calcout">
+          <div class="rate"><b id="rateVal">&pound;225</b><span>per person / day</span></div>
+          <div class="tot"><b id="totVal">&pound;3,600</b><span id="totMeta">8 people &times; 2 days</span></div>
+        </div>
+        <div class="calcsave" id="saveVal">You save &pound;400 vs the standard rate</div>
+        <a class="btn btn-forest btn-sm" href="#contact" style="margin-top:14px;width:100%;justify-content:center">Book this / get a callback</a>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="reviews" class="reviews"><div class="wrap">
+    <div class="sec-head reveal"><span class="sec-eye"><span class="eyebrow">Client feedback</span></span><h2>Trusted by care and education leaders.</h2></div>
+    <div class="rgrid reveal">
+      <div class="rcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Practical, professional and focused on keeping children safe with dignity."</p><div class="by"><span class="av">FH</span><span><b>Dr Fayaz Hasham</b><span>Golden Rainbow Children's Home</span></span></div></div>
+      <div class="rcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"This training strengthened staff confidence, judgement and understanding of emotional safety."</p><div class="by"><span class="av">EK</span><span><b>Edna Kamerhon</b><span>Associated Care &mdash; Semi-Independent</span></span></div></div>
+      <div class="rcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"A strong balance of safeguarding, therapeutic practice, de-escalation and proportionate intervention."</p><div class="by"><span class="av">SM</span><span><b>Stephen Manley</b><span>Rumman Care Children's Home</span></span></div></div>
+      <div class="rcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Excellent preparation for staff working in demanding care environments where calm, safe practice matters."</p><div class="by"><span class="av">RA</span><span><b>Rebecca Andrews</b><span>Medi Temp Recruitment Agency</span></span></div></div>
+      <div class="rcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Clear, relevant and rooted in the real pressures of children's residential care."</p><div class="by"><span class="av">CL</span><span><b>Creating Lifestyles</b><span>Children's Home</span></span></div></div>
+    </div>
+    <p class="note">We only publish genuine, consented client feedback.</p>
+  </div></section>
+
+  <section class="faq"><div class="wrap">
+    <div class="sec-head reveal"><span class="sec-eye"><span class="eyebrow">Questions</span></span><h2>The things providers ask first.</h2></div>
+    <div class="faqlist reveal">
+      <details><summary>Is the training certificated? <span class="pl">+</span></summary><div class="ans">Yes. Every learner who completes the two days receives a certificate on completion.</div></details>
+      <details><summary>Where is it delivered? <span class="pl">+</span></summary><div class="ans">On-site at your service, so techniques are practised in your own environment, on dates arranged around your rota.</div></details>
+      <details><summary>How long is the course? <span class="pl">+</span></summary><div class="ans">Two full, practical days &mdash; covering prevention and de-escalation through to safe, lawful, last-resort intervention and recording.</div></details>
+      <details><summary>Is it for children's or adults' services? <span class="pl">+</span></summary><div class="ans">Both. The therapeutic, least-restrictive model applies across children's residential, supported accommodation, adult social care and education settings.</div></details>
+      <details><summary>Does it cover the law? <span class="pl">+</span></summary><div class="ans">Yes &mdash; reasonable force, human rights, duty of care and professional accountability, so your team is confident and defensible.</div></details>
+      <details><summary>Do we really get the Restraint Log App free? <span class="pl">+</span></summary><div class="ans">Yes. Full access to the Restraint Log App is included at no extra cost for everyone you train.</div></details>
+    </div>
+  </div></section>
+
+  <section id="contact" class="final" style="padding:0"><div class="wrap" style="padding:82px 0">
+    <span class="eyebrow" style="color:var(--brass)">Get started</span>
+    <h2>Ready to train your team?</h2>
+    <p>Tell us about your service and we'll build the right package &mdash; on dates that fit your rota.</p>
+    <div class="cta">
+      <a class="btn btn-brass" href="tel:02046180163">Call 020 4618 0163</a>
+      <a class="btn btn-out-l" href="mailto:des@webbcareconsultancy.com?subject=Therapeutic%20Physical%20Intervention%20Training%20enquiry&amp;body=Hi%2C%20we'd%20like%20a%20quote%20for%20Therapeutic%20Physical%20Intervention%20training.%0A%0AService%2Ftype%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20dates%3A%20">Enquire by email</a>
+    </div>
+    <p class="ph">Or book: <a href="tel:+447481810622">+44 7481 810622</a></p>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="ftop">
+    <div>
+      <a class="brand" href="#top" style="display:inline-flex;margin-bottom:14px"><span class="mk">LSN</span><span><b style="color:#fff">London Safeguarding Network</b><span>Therapeutic Physical Intervention</span></span></a>
+      <p style="color:var(--sage);font-size:14px;max-width:46ch">Therapeutic Physical Intervention Training &mdash; built on Positive Behaviour Support, de-escalation and trauma-informed practice for children's and adult services.</p>
+    </div>
+    <div><h4>This course</h4><a href="#approach">The approach</a><a href="#learn">What you'll learn</a><a href="#app">Restraint Log App</a><a href="#pricing">Pricing</a></div>
+    <div><h4>Contact</h4><a href="tel:02046180163">020 4618 0163</a><a href="tel:+447481810622">+44 7481 810622</a><a href="#contact">Book a call</a></div>
+  </div>
+  <div class="disc">London Safeguarding Network &mdash; Therapeutic Physical Intervention Training. All testimonials published are genuine and consented. Pricing shown is indicative for guidance; final quotes are confirmed on enquiry. The Restraint Log App supports your recording and does not replace your incident reports, safeguarding procedures, statutory notifications or professional judgement. &copy; 2026 London Safeguarding Network.</div>
+</div></footer>
+
+<script>
+"use strict";
+(function(){
+  var people=document.getElementById("ppl"), saveEl=document.getElementById("saveVal");
+  var rateEl=document.getElementById("rateVal"), totEl=document.getElementById("totVal"), metaEl=document.getElementById("totMeta");
+  var days=2;
+  function rateFor(n){ if(n>=12)return 210; if(n>=8)return 225; if(n>=4)return 235; return 250; }
+  function money(n){ return "&pound;"+n.toLocaleString("en-GB"); }
+  function recalc(){
+    var n=Math.max(1,Math.min(60,parseInt(people.value,10)||1));
+    var rate=rateFor(n), total=rate*n*days, saving=(250-rate)*n*days;
+    rateEl.innerHTML=money(rate);
+    totEl.innerHTML=money(total);
+    metaEl.textContent=n+" "+(n===1?"person":"people")+" \u00d7 "+days+" "+(days===1?"day":"days");
+    saveEl.innerHTML = saving>0 ? "You save "+money(saving)+" vs the standard rate" : "Standard rate \u2014 add more of your team to save";
+  }
+  people.addEventListener("input",recalc);
+  [].forEach.call(document.querySelectorAll("#daySeg button"),function(b){
+    b.addEventListener("click",function(){
+      days=parseInt(b.getAttribute("data-d"),10);
+      [].forEach.call(document.querySelectorAll("#daySeg button"),function(x){x.classList.toggle("on",x===b);});
+      recalc();
+    });
+  });
+  recalc();
+
+  if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+    [].forEach.call(document.querySelectorAll(".reveal"),function(el){io.observe(el);});
+  } else { [].forEach.call(document.querySelectorAll(".reveal"),function(el){el.classList.add("in");}); }
+})();
+</script>
+</body>
+</html>
